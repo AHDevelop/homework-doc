@@ -1,0 +1,219 @@
+﻿# A5:ER FORMAT:11
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright (C)2007 m.matsubara
+# A5:SQL Mk-2 Copyright (C)1997 m.matsubara
+#  http://www.wind.sannet.ne.jp/m_matsu/developer/a5m2/
+
+[Manager]
+ProjectName=
+Author=
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=6
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=6
+RDBMSTypeName=PostgreSQL
+GenerateDropTableStatement=1
+DropTableIfExists=0
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+ShowTag=1
+ShowCommonAttributes=0
+
+[Entity]
+PName=user_master
+LName=ユーザマスタ
+Comment=
+TableOption=
+Page=MAIN
+Left=100
+Top=450
+Field="ユーザID","user_id","integer","NOT NULL",0,"","",$FFFFFFFF,""
+Field="Eメール","email","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="名前","user_name","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="認証タイプ","auth_type","smallint","NOT NULL",,"","",$FFFFFFFF,""
+Field="認証ID","auth_id","text",,,"","",$FFFFFFFF,""
+Field="削除フラグ","is_deleted","boolean","NOT NULL",,"","",$00000000,""
+Field="作成者","created_by","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日時","created_at","timestamp","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新者","updated_by","varchar(255)",,,"","",$FFFFFFFF,""
+Field="更新日時","updated_at","varchar(255)",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20170831224646
+Position="MAIN",100,450
+
+[Entity]
+PName=room
+LName=部屋
+Comment=
+TableOption=
+Page=MAIN
+Left=500
+Top=500
+Field="部屋ID","room_id","serial","NOT NULL",0,"","",$FFFFFFFF,""
+Field="部屋名","room_name","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="部屋オーナー","user_id","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="部屋番号","room_number","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="削除フラグ","is_deleted","boolean","NOT NULL",,"","",$00000000,""
+Field="作成者","created_by","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日時","created_at","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新者","updated_by","varchar(255)",,,"","",$FFFFFFFF,""
+Field="更新日時","updated_at","varchar(255)",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20180408222607
+Position="MAIN",500,500
+
+[Entity]
+PName=room_user
+LName=部屋ユーザ
+Comment=
+TableOption=
+Page=MAIN
+Left=300
+Top=350
+Field="部屋ID","room_id","serial","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ユーザID","user_id","integer","NOT NULL",1,"","",$FFFFFFFF,""
+Field="削除フラグ","is_deleted","boolean","NOT NULL",,"","",$00000000,""
+Field="作成者","created_by","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日時","created_at","timestamp","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新者","updated_by","varchar(255)",,,"","",$FFFFFFFF,""
+Field="更新日時","updated_at","varchar(255)",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20170831005053
+Position="MAIN",300,350
+
+[Entity]
+PName=home_work_master
+LName=家事マスタ
+Comment=
+TableOption=
+Page=MAIN
+Left=1100
+Top=400
+Field="家事ID","home_work_id","serial","NOT NULL",0,"","",$FFFFFFFF,""
+Field="家事名","home_work_name","varchar(127)","NOT NULL",,"","",$FFFFFFFF,""
+Field="基準家事時間","base_home_work_time_hh","decimal(3,1)","NOT NULL",,"","",$FFFFFFFF,""
+Field="削除フラグ","is_deleted","boolean","NOT NULL",,"","",$00000000,""
+Field="作成者","created_by","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日時","created_at","timestamp","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新者","updated_by","varchar(255)",,,"","",$FFFFFFFF,""
+Field="更新日時","updated_at","varchar(255)",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20170831005309
+Position="MAIN",1100,400
+
+[Entity]
+PName=home_work_hist
+LName=家事履歴
+Comment=
+TableOption=
+Page=MAIN
+Left=300
+Top=650
+Field="家事履歴ID","home_work_hist_id","serial","NOT NULL",0,"","",$FFFFFFFF,""
+Field="部屋ID","room_id","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="部屋家事ID","room_home_work_id","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="ユーザID","user_id","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="家事日","home_work_date","date","NOT NULL",,"","",$FFFFFFFF,""
+Field="家事時間","home_work_time_hh","decimal(3,1)","NOT NULL",,"","",$FFFFFFFF,""
+Field="削除フラグ","is_deleted","boolean","NOT NULL",,"","",$00000000,""
+Field="作成者","created_by","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日時","created_at","timestamp","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新者","updated_by","varchar(255)",,,"","",$FFFFFFFF,""
+Field="更新日時","updated_at","varchar(255)",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20170831010004
+Position="MAIN",300,650
+
+[Entity]
+PName=COMMON_TMPLETE
+LName=共通カラムテンプレート
+Comment=
+TableOption=
+Page=MAIN
+Left=100
+Top=100
+Field="削除フラグ","is_deleted","boolean","NOT NULL",,"","",$00000000,""
+Field="作成者","created_by","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日時","created_at","timestamp","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新者","updated_by","varchar(255)",,,"","",$FFFFFFFF,""
+Field="更新日時","updated_at","varchar(255)",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20170830224832
+Position="MAIN",100,100
+
+[Entity]
+PName=room_home_work
+LName=部屋家事
+Comment=
+TableOption=
+Page=MAIN
+Left=800
+Top=450
+Field="部屋家事ID","room_home_work_id","serial","NOT NULL",0,"","",$FFFFFFFF,""
+Field="部屋ID","room_id","integer","NOT NULL",,"","",$FFFFFFFF,""
+Field="家事名","home_work_name","varchar(127)","NOT NULL",,"","",$FFFFFFFF,""
+Field="基準家事時間","bese_home_work_time_hh","decimal(3,1)","NOT NULL",,"","",$FFFFFFFF,""
+Field="表示フラグ","is_visible","boolean","NOT NULL",,"","",$FFFFFFFF,""
+Field="削除フラグ","is_deleted","boolean","NOT NULL",,"","",$00000000,""
+Field="作成者","created_by","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日時","created_at","timestamp","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新者","updated_by","varchar(255)",,,"","",$FFFFFFFF,""
+Field="更新日時","updated_at","varchar(255)",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20170831224426
+Position="MAIN",800,450
+
+[Entity]
+PName=user_token
+LName=ユーザトークン
+Comment=
+TableOption=
+Page=MAIN
+Left=650
+Top=200
+Field="ユーザID","user_id","integer","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ユーザトークン","user_token","varchar(128)","NOT NULL",,"","",$FFFFFFFF,""
+Field="削除フラグ","is_deleted","boolean","NOT NULL",,"","",$00000000,""
+Field="作成者","created_by","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日時","created_at","timestamp","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新者","updated_by","varchar(255)",,,"","",$FFFFFFFF,""
+Field="更新日時","updated_at","varchar(255)",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20180408222004
+Position="MAIN",650,200
