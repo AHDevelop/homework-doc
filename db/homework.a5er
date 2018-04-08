@@ -47,7 +47,7 @@ TableOption=
 Page=MAIN
 Left=100
 Top=450
-Field="ユーザID","user_id","integer","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ユーザID","user_id","serial","NOT NULL",0,"","",$FFFFFFFF,""
 Field="Eメール","email","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
 Field="名前","user_name","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
 Field="認証タイプ","auth_type","smallint","NOT NULL",,"","",$FFFFFFFF,""
@@ -60,7 +60,7 @@ Field="更新日時","updated_at","varchar(255)",,,"","",$FFFFFFFF,""
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20170831224646
+ModifiedDateTime=20180408234736
 Position="MAIN",100,450
 
 [Entity]
@@ -94,7 +94,7 @@ TableOption=
 Page=MAIN
 Left=300
 Top=350
-Field="部屋ID","room_id","serial","NOT NULL",0,"","",$FFFFFFFF,""
+Field="部屋ID","room_id","integer","NOT NULL",0,"","",$FFFFFFFF,""
 Field="ユーザID","user_id","integer","NOT NULL",1,"","",$FFFFFFFF,""
 Field="削除フラグ","is_deleted","boolean","NOT NULL",,"","",$00000000,""
 Field="作成者","created_by","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
@@ -104,7 +104,7 @@ Field="更新日時","updated_at","varchar(255)",,,"","",$FFFFFFFF,""
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20170831005053
+ModifiedDateTime=20180408234820
 Position="MAIN",300,350
 
 [Entity]
@@ -126,7 +126,7 @@ Field="更新日時","updated_at","varchar(255)",,,"","",$FFFFFFFF,""
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20170831005309
+ModifiedDateTime=20180408235733
 Position="MAIN",1100,400
 
 [Entity]
@@ -184,7 +184,7 @@ Top=450
 Field="部屋家事ID","room_home_work_id","serial","NOT NULL",0,"","",$FFFFFFFF,""
 Field="部屋ID","room_id","integer","NOT NULL",,"","",$FFFFFFFF,""
 Field="家事名","home_work_name","varchar(127)","NOT NULL",,"","",$FFFFFFFF,""
-Field="基準家事時間","bese_home_work_time_hh","decimal(3,1)","NOT NULL",,"","",$FFFFFFFF,""
+Field="基準家事時間","base_home_work_time_hh","decimal(3,1)","NOT NULL",,"","",$FFFFFFFF,""
 Field="表示フラグ","is_visible","boolean","NOT NULL",,"","",$FFFFFFFF,""
 Field="削除フラグ","is_deleted","boolean","NOT NULL",,"","",$00000000,""
 Field="作成者","created_by","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
@@ -194,7 +194,7 @@ Field="更新日時","updated_at","varchar(255)",,,"","",$FFFFFFFF,""
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20170831224426
+ModifiedDateTime=20180408235755
 Position="MAIN",800,450
 
 [Entity]
@@ -206,7 +206,7 @@ Page=MAIN
 Left=650
 Top=200
 Field="ユーザID","user_id","integer","NOT NULL",0,"","",$FFFFFFFF,""
-Field="ユーザトークン","user_token","varchar(128)","NOT NULL",,"","",$FFFFFFFF,""
+Field="ユーザトークン","token","varchar(128)","NOT NULL",,"","",$FFFFFFFF,""
 Field="削除フラグ","is_deleted","boolean","NOT NULL",,"","",$00000000,""
 Field="作成者","created_by","varchar(255)","NOT NULL",,"","",$FFFFFFFF,""
 Field="作成日時","created_at","timestamp","NOT NULL",,"","",$FFFFFFFF,""
@@ -215,5 +215,5 @@ Field="更新日時","updated_at","varchar(255)",,,"","",$FFFFFFFF,""
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20180408222004
+ModifiedDateTime=20180408234720
 Position="MAIN",650,200
