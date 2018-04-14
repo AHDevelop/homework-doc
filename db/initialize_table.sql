@@ -5,7 +5,7 @@
 -- Application  : A5:SQL Mk-2
 
 -- ユーザマスタ
-drop table user_master cascade;
+drop table IF EXISTS user_master cascade;
 
 create table user_master (
   user_id serial not null
@@ -22,7 +22,7 @@ create table user_master (
 ) ;
 
 -- 部屋
-drop table room cascade;
+drop table IF EXISTS room cascade;
 
 create table room (
   room_id serial not null
@@ -38,7 +38,7 @@ create table room (
 ) ;
 
 -- 部屋ユーザ
-drop table room_user cascade;
+drop table IF EXISTS room_user cascade;
 
 create table room_user (
   room_id integer not null
@@ -52,7 +52,7 @@ create table room_user (
 ) ;
 
 -- 家事マスタ
-drop table home_work_master cascade;
+drop table IF EXISTS home_work_master cascade;
 
 create table home_work_master (
   home_work_id serial not null
@@ -67,7 +67,7 @@ create table home_work_master (
 ) ;
 
 -- 家事履歴
-drop table home_work_hist cascade;
+drop table IF EXISTS home_work_hist cascade;
 
 create table home_work_hist (
   home_work_hist_id serial not null
@@ -85,7 +85,7 @@ create table home_work_hist (
 ) ;
 
 -- 部屋家事
-drop table room_home_work cascade;
+drop table IF EXISTS room_home_work cascade;
 
 create table room_home_work (
   room_home_work_id serial not null
@@ -102,7 +102,7 @@ create table room_home_work (
 ) ;
 
 -- ユーザトークン
-drop table user_token cascade;
+drop table IF EXISTS user_token cascade;
 
 create table user_token (
   user_id integer not null
